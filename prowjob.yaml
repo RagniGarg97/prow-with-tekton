@@ -1,0 +1,12 @@
+apiVersion: prow.k8s.io/v1alpha1
+kind: ProwJob
+metadata:
+  name: foo
+spec:
+  agent: tekton-pipelines
+  pipeline_run_spec:
+    pipelineRef:
+      name: demo-pipeline
+    trigger:
+      type: manual
+    serviceAccount: 'default'
